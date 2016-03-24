@@ -1,0 +1,105 @@
+<!DOCTYPE html> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough"> 
+
+<h:head>
+	<meta charset="utf-8" />
+  <title>TravelPostManager</title>
+  <meta name="description" content="A CRUD application to manage the posts from our journey" />
+  <meta name="author" content="Lars Denkewitz, larsqingtravel@ldenkewi-it.de"/>
+
+	<link href="#{request.contextPath}/resources/css/bootstrap.min.css" rel="stylesheet"/>
+	<link href="#{request.contextPath}/resources/css/bootstrap-theme.min.css" rel="stylesheet"/>
+	<link href="#{request.contextPath}/resources/css/main.css" rel="stylesheet"/>
+</h:head> 
+
+<h:body> 
+	
+	<div class="main-container">
+		
+		<div class="page-header">
+			<h2>PostManager for the travel blog @ larsqingtravel.ldenkewi-it.de</h2>
+		</div>
+
+		<div class="main-content">
+		
+			<h:messages styleClass="alert alert-danger"/>
+		
+			<h2>List of posts</h2>
+			
+			<h:form id="postList" styleClass="form-horizontal" p:role="form">
+			
+				<h:dataTable id="postTable" styleClass="table table-striped table-bordered post-table" 
+					value="#{postController.retrieveAllPosts()}" var="post">
+					<h:column>
+						<f:facet name="header">
+							<h:outputText value="Author"></h:outputText>
+						</f:facet>
+						<h:outputText value="#{post.author}"></h:outputText>
+					</h:column>
+					<h:column>
+						<f:facet name="header">
+							<h:outputText value="Caption"></h:outputText>
+						</f:facet>
+						<h:outputText value="#{post.contentList.get(0).caption}"></h:outputText>
+					</h:column>
+					<h:column>
+						<f:facet name="header">
+							<h:outputText value="Country"></h:outputText>
+						</f:facet>
+						<h:outputText value="#{post.contentList.get(0).country}"></h:outputText>
+					</h:column>
+					<h:column>
+						<f:facet name="header">
+							<h:outputText value="Language"></h:outputText>
+						</f:facet>
+						<h:outputText value="#{post.contentList.get(0).language}"></h:outputText>
+					</h:column>
+					<h:column>
+						<f:facet name="header">
+							<h:outputText value="Date of post"></h:outputText>
+						</f:facet>
+						<h:outputText value="#{post.postDate.toLocalDate()}"></h:outputText>
+					</h:column>
+					<h:column>
+						<f:facet name="header">
+							<h:outputText value="Date of travel"></h:outputText>
+						</f:facet>
+						<h:outputText value="#{post.startDateCountry}"></h:outputText>
+					</h:column>
+					
+					<h:column>
+	          <f:facet name="header">
+	         		 <h:outputText value="Action" />
+	          </f:facet>
+	          <h:commandLink action="#{postController.forwardToEditPost(post.id)}" styleClass="btn"> 
+	            <f:param name="id" value="#{post.id}" />
+	            <span class="glyphicon glyphicon-edit"></span>
+	          </h:commandLink>
+	          <h:link styleClass="btn" outcome="removePost.xhtml?id=#{post.id}" includeViewParams="true">
+	            <f:param name="id" value="#{post.id}" />
+	            <span class="glyphicon glyphicon-trash"></span>
+	          </h:link>
+					</h:column>
+				</h:dataTable>
+
+			</h:form>
+			
+			<hr class="subfeaturette-divider" />
+
+			<h3>Available actions</h3>
+
+			<h:link styleClass="btn btn-primary" outcome="newPost.xhtml" value="Create a new post" />
+
+		</div> <!-- .main-Content -->
+		
+		
+	</div> <!-- .main-container -->
+	
+	<script src="#{request.contextPath}/resources/js/jquery-1.12.0.min.js"></script>
+  <script src="#{request.contextPath}/resources/js/bootstrap.min.js"></script>
+</h:body> 
+</html>

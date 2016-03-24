@@ -1,0 +1,152 @@
+<!DOCTYPE html> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough"> 
+
+<h:head>
+	<meta charset="utf-8" />
+  <title>Remove post</title>
+  <meta name="description" content="A CRUD application to manage the posts from our journey" />
+  <meta name="author" content="Lars Denkewitz, larsqingtravel@ldenkewi-it.de"/>
+
+	<link href="#{request.contextPath}/resources/css/bootstrap.min.css" rel="stylesheet"/>
+	<link href="#{request.contextPath}/resources/css/bootstrap-theme.min.css" rel="stylesheet"/>
+	<link href="#{request.contextPath}/resources/css/main.css" rel="stylesheet"/>
+	
+	<f:metadata>
+		<f:viewParam name="id" value="#{postController.id}" />
+		<f:event listener="#{postController.findPostById()}" type="preRenderView"></f:event>
+	</f:metadata>
+</h:head> 
+
+<h:body> 
+	
+	<div class="main-container">
+		
+		<div class="page-header">
+			<h2>Remove post</h2>
+		</div>
+
+		<div class="main-content">
+		
+			<h:form id="removePost" styleClass="form-horizontal" p:role="form">
+			
+				<h:messages styleClass="alert alert-danger"/>
+			
+				<div class="form-group">
+					<h:outputLabel styleClass="col-sm-5 control-label" for="author">
+					Author:</h:outputLabel>
+						<div class="col-sm-7">
+							<h:inputText class="form-control" value="#{postController.currentPost.author}"
+	              id="author" p:placeholder="Name of author" required="true"
+								requiredMessage="Author is required"/>
+						</div>
+				</div>
+				
+				<div class="form-group">
+					<h:outputLabel styleClass="col-sm-5 control-label" for="caption">
+					Post title:</h:outputLabel>
+						<div class="col-sm-7">
+							<h:inputText class="form-control" autocomplete="off"
+	              value="#{postController.currentPost.contentList.get(0).caption}"
+	              id="caption" p:placeholder="Title of the post" required="true"
+	              requiredMessage="Caption is required"/>
+						</div>
+				</div>
+				
+				
+				<div class="form-group">
+					<h:outputLabel styleClass="col-sm-5 control-label" for="flickr">
+					Address of the flickr album (can be empty):</h:outputLabel>
+					<div class="col-sm-7">
+						<h:inputText class="form-control"
+              value="#{postController.currentPost.flickrAddress}"
+              id="flickr" p:placeholder="Address of flickr album"/>
+					</div>
+				</div>
+				
+				<hr class="subfeaturette-divider" />
+				
+				<div class="form-group">
+					<h:outputLabel styleClass="col-sm-3 control-label" for="startDateCountry">
+					Date of arrival in this country:</h:outputLabel>
+						<div class="col-sm-3">
+							<h:inputText class="form-control" value="#{postController.startDateCountry}"
+	              id="startDateCountry" p:placeholder="yyyy-mm-dd" required="true"
+								requiredMessage="Arrival date is required"/>
+						</div>
+					<h:outputLabel styleClass="col-sm-3 control-label" for="endDateCountry">
+					Date of departure from this country:</h:outputLabel>
+						<div class="col-sm-3">
+							<h:inputText class="form-control" value="#{postController.endDateCountry}"
+	              id="endDateCountry" p:placeholder="yyyy-mm-dd" required="true"
+								requiredMessage="Departure date is required"/>
+						</div>
+				</div>
+				
+				<hr class="subfeaturette-divider" />
+				
+				<div class="form-group">
+					<h:outputLabel styleClass="col-sm-3 control-label" for="country">
+					Country of travel:</h:outputLabel>
+						<div class="col-sm-3">
+							<h:selectOneMenu value="#{postController.currentPost.contentList.get(0).country}" 
+							id="country" class="form-control" required="true"
+							requiredMessage="Country is required">
+								<f:selectItem itemValue="" itemLabel="---"/>
+								<f:selectItems value="#{postController.availablecountries}" />
+							</h:selectOneMenu>
+						</div>
+						
+						
+					<h:outputLabel styleClass="col-sm-3 control-label" for="language">
+					Language of post:</h:outputLabel>
+						<div class="col-sm-3">
+							<h:selectOneMenu value="#{postController.currentPost.contentList.get(0).language}" 
+							id="language" class="form-control" required="true"
+							requiredMessage="Language is required">
+								<f:selectItem itemValue="" itemLabel="---"/>
+								<f:selectItems value="#{postController.availablelanguages}"/>
+							</h:selectOneMenu>
+						</div>
+				</div>
+
+				<hr class="subfeaturette-divider" />
+								
+				<div class="form-group">
+					<h:outputLabel styleClass="col-sm-1 control-label" for="content">Content:</h:outputLabel>
+					<div class="col-sm-12">
+						<h:inputTextarea class="form-control" rows="12"
+              value="#{postController.currentPost.contentList.get(0).content}"
+              id="content" p:placeholder="Title of the post" required="true"
+							requiredMessage="Content is required"/>
+					</div>
+				</div>
+				
+				<div class="form-group">
+					<h:outputLabel styleClass="col-sm-9 control-label" for="postDate">
+					Date of post:</h:outputLabel>
+						<div class="col-sm-3">
+							<h:inputText class="form-control" value="#{postController.postDate}"
+	              id="postDate" p:placeholder="yyyy-mm-dd (default: now)"/>
+						</div>
+				</div>
+				
+				<p class="buttons_bar_create_post">
+<!-- 					<h:commandButton styleClass="btn btn-md btn-primary"  -->
+<!-- 						action="#{postController.createPost()}" value="Create post" /> -->
+					<h:link styleClass="btn btn-primary" outcome="index.xhtml}" value="Back" />
+				</p>
+				
+			</h:form> <!-- #removePost -->
+			
+		</div> <!-- .mainContent -->
+		
+	</div> <!-- .main-container -->
+	
+	<script src="#{request.contextPath}/resources/js/jquery-1.12.0.min.js"></script>
+  <script src="#{request.contextPath}/resources/js/bootstrap.min.js"></script>
+</h:body> 
+</html>

@@ -1,0 +1,1005 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"scroll",
+				"scrollY"
+			],
+			[
+				"scrol",
+				"scrollY"
+			],
+			[
+				"click",
+				"clickedButton"
+			],
+			[
+				"act",
+				"activeOrder"
+			],
+			[
+				"ac",
+				"activeOrder"
+			],
+			[
+				"data",
+				"data-post-order"
+			],
+			[
+				"cli",
+				"clickOnOrderButtonHandler"
+			],
+			[
+				"tim",
+				"timeRangeObject"
+			],
+			[
+				"month",
+				"monthAgo"
+			],
+			[
+				"gener",
+				"generateTheMonthAgoLable"
+			],
+			[
+				"else",
+				"else-if"
+			],
+			[
+				"nu",
+				"numberMonthAgo"
+			],
+			[
+				"mon",
+				"monthAgo"
+			],
+			[
+				"prev",
+				"prevMonthAgo"
+			],
+			[
+				"back",
+				"background"
+			],
+			[
+				"r",
+				"right"
+			],
+			[
+				"enco",
+				"encodedString"
+			],
+			[
+				"for",
+				"for	for (…) {…}"
+			],
+			[
+				"local",
+				"localhost"
+			],
+			[
+				"sm",
+				"smallScreen"
+			],
+			[
+				"bac",
+				"background-image"
+			],
+			[
+				"paddin",
+				"padding"
+			],
+			[
+				"mar",
+				"margin-bottom"
+			],
+			[
+				"margin",
+				"margin"
+			],
+			[
+				"prin",
+				"print_r"
+			],
+			[
+				"copy",
+				"copyHtml"
+			],
+			[
+				"js",
+				"jsSources"
+			],
+			[
+				"ht",
+				"htmlTarget"
+			],
+			[
+				"le",
+				"left"
+			],
+			[
+				"font-s",
+				"font-size"
+			],
+			[
+				"dest",
+				"destinations"
+			],
+			[
+				"und",
+				"undefined"
+			],
+			[
+				"ex",
+				"exports"
+			],
+			[
+				"fli",
+				"flickr_address"
+			],
+			[
+				"mu",
+				"mustacheParam"
+			],
+			[
+				"musta",
+				"mustacheHtml"
+			],
+			[
+				"att",
+				"attr	.attr() - multiple"
+			],
+			[
+				"mod",
+				"modernizr"
+			],
+			[
+				"val",
+				"value"
+			],
+			[
+				"con",
+				"console"
+			],
+			[
+				"data-",
+				"data-post-id"
+			],
+			[
+				"post_",
+				"post_date"
+			],
+			[
+				"metaD",
+				"metaDataTyp"
+			],
+			[
+				"sele",
+				"select_view"
+			],
+			[
+				"app",
+				"append"
+			],
+			[
+				"id",
+				"id_post"
+			],
+			[
+				"artic",
+				"article_id"
+			],
+			[
+				"st",
+				"start_date"
+			],
+			[
+				"end",
+				"end_date"
+			],
+			[
+				"text",
+				"text-decoration"
+			],
+			[
+				"f",
+				"font-weight"
+			],
+			[
+				"marg",
+				"margin-top"
+			],
+			[
+				"pa",
+				"padding-top"
+			],
+			[
+				"html",
+				"html"
+			],
+			[
+				"background",
+				"background-color"
+			],
+			[
+				"border",
+				"border-style"
+			],
+			[
+				"tra",
+				"transparent"
+			],
+			[
+				"p",
+				"padding-top"
+			],
+			[
+				"m",
+				"margin-top"
+			],
+			[
+				"tabl",
+				"table-cell"
+			],
+			[
+				"ta",
+				"table-cell"
+			],
+			[
+				"add",
+				"addClass"
+			],
+			[
+				"append",
+				"appendTo"
+			],
+			[
+				"j",
+				"jsonResult"
+			],
+			[
+				"json",
+				"json_encode"
+			],
+			[
+				"retu",
+				"return"
+			],
+			[
+				"ret",
+				"return"
+			],
+			[
+				"po",
+				"posting"
+			],
+			[
+				"getPostContentFrom",
+				"getPostContentFromDB"
+			],
+			[
+				"page",
+				"pageName"
+			],
+			[
+				"get",
+				"getPostContent"
+			],
+			[
+				"connect",
+				"connectToDB"
+			],
+			[
+				"fetch_object",
+				"mysql_fetch_object"
+			],
+			[
+				"mys",
+				"mysqllink"
+			],
+			[
+				"mysqli_",
+				"mysqli_connect"
+			],
+			[
+				"inner",
+				"innerLink"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"return",
+				"returnLink"
+			],
+			[
+				"bo",
+				"border-style"
+			],
+			[
+				"s",
+				"style	Attr"
+			],
+			[
+				"he",
+				"height	Attr"
+			],
+			[
+				"ope",
+				"openedPostClass"
+			],
+			[
+				"cl",
+				"closedPostClass"
+			],
+			[
+				"c",
+				"class"
+			],
+			[
+				"ba",
+				"background-color"
+			],
+			[
+				"padd",
+				"padding"
+			],
+			[
+				"tex",
+				"text-align"
+			],
+			[
+				"te",
+				"text-align"
+			],
+			[
+				"wid",
+				"width"
+			],
+			[
+				"blo",
+				"inline-block"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"boo",
+				"bottom"
+			],
+			[
+				"a",
+				"vertical-align"
+			],
+			[
+				"margi",
+				"margin"
+			],
+			[
+				"border-b",
+				"border-bottom-left-radius"
+			],
+			[
+				"in",
+				"inline-block"
+			],
+			[
+				"fon",
+				"font-size"
+			],
+			[
+				"h",
+				"h1	Tag"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "WebContent/index.xhtml",
+			"settings":
+			{
+				"buffer_size": 2810,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"pc di",
+				"Package Control: Disable Package"
+			],
+			[
+				"pack dis",
+				"Package Control: Disable Package"
+			],
+			[
+				"read",
+				"ReadmePlease"
+			],
+			[
+				"p ins",
+				"Package Control: Install Package"
+			],
+			[
+				"ream",
+				"ReadmePlease"
+			],
+			[
+				"readm",
+				"ReadmePlease"
+			],
+			[
+				"packa contr in",
+				"Package Control: Install Package"
+			],
+			[
+				"packa contr en",
+				"Package Control: Enable Package"
+			],
+			[
+				"packa contr inst",
+				"Package Control: Install Package"
+			],
+			[
+				"packa contr",
+				"Package Control: Disable Package"
+			],
+			[
+				"packa in",
+				"Package Control: Install Package"
+			],
+			[
+				"rea",
+				"ReadmePlease"
+			],
+			[
+				"vmen",
+				"View: Toggle Menu"
+			],
+			[
+				"pack con ",
+				"Package Control: Enable Package"
+			],
+			[
+				"pack con rem",
+				"Package Control: Remove Package"
+			],
+			[
+				"package in",
+				"Package Control: Install Package"
+			],
+			[
+				"package",
+				"Package Control: Disable Package"
+			],
+			[
+				"pack rem",
+				"Package Control: Remove Package"
+			],
+			[
+				" inst",
+				"Package Control: Install Package"
+			],
+			[
+				"pack",
+				"Package Control: Remove Package"
+			],
+			[
+				"Package Control: in",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Remove Package"
+			]
+		],
+		"width": 575.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"view.run_command(\"jshint\")",
+			"jsl",
+			"jslint",
+			"jsl",
+			"jsl -help:conf > jsl.conf",
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
+			"ls"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/media/ldenkewi-mint/Data2/workspaces/workspace_j2ee/TravelPageDataManager",
+		"/media/ldenkewi-mint/Data2/workspaces/workspace_j2ee/TravelPageDataManager/WebContent"
+	],
+	"file_history":
+	[
+		"/media/ldenkewi-mint/Data2/workspaces/workspace_j2ee/TravelPageDataManager/WebContent/newPost.xhtml",
+		"/media/ldenkewi-mint/Data2/workspaces/workspace_j2ee/TravelPageDataManager/WebContent/ressources/css/main.css",
+		"/home/ldenkewi-mint/Documents/ldenkewi-it_homepage/home.html",
+		"/home/ldenkewi-mint/Documents/apache_home/ldenkewi/home.html",
+		"/home/ldenkewi-mint/Documents/apache_home/home.html",
+		"/home/ldenkewi-mint/Documents/larsqingtravel_website/home.html",
+		"/home/ldenkewi-mint/Documents/gradle_test/new_gradle_folder/copyFiles.gradle",
+		"/home/ldenkewi-mint/Documents/gradle_test/new_gradle_folder/build.gradle",
+		"/home/ldenkewi-mint/Documents/ldenkewi-it_homepage/package.json",
+		"/home/ldenkewi-mint/Documents/larsqingtravel_website/css/main.css",
+		"/home/ldenkewi-mint/Documents/larsqingtravel_website/gulpfile.js",
+		"/home/ldenkewi-mint/Documents/larsqingtravel_website/js/main.js",
+		"/home/ldenkewi-mint/Documents/larsqingtravel_website/php/phpScript.php",
+		"/home/ldenkewi-mint/Documents/ldenkewi-it_homepage/gulpfile.js",
+		"/home/ldenkewi-mint/Documents/larsqingtravel_website/.gitignore",
+		"/home/ldenkewi-mint/Documents/larsqingtravel_website/js/vendor/moment-range.js",
+		"/home/ldenkewi-mint/Documents/larsqingtravel_website/xml/rssfeed_larsqingtravel.xml",
+		"/home/ldenkewi-mint/Documents/apache_home/js/main.js",
+		"/home/ldenkewi-mint/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap",
+		"/home/ldenkewi-mint/.config/sublime-text-3/Packages/Default/Default (Linux).sublime-keymap",
+		"/home/ldenkewi-mint/Documents/larsqingtravel_website/package.json",
+		"/home/ldenkewi-mint/.config/sublime-text-3/Packages/JSHint Gutter/.jshintrc",
+		"/home/ldenkewi-mint/Documents/apache_home/php/blub.php",
+		"/home/ldenkewi-mint/.config/sublime-text-3/Packages/JSHint Gutter/JSHint.sublime-settings",
+		"/home/ldenkewi-mint/Documents/larsqingtravel_website/gruntfile.js",
+		"/home/ldenkewi-mint/Documents/node_js_workspace/gulp_test_project/builds/development/index.html",
+		"/home/ldenkewi-mint/Documents/node_js_workspace/gulp_test_project/builds/development/css/style.css",
+		"/home/ldenkewi-mint/Documents/node_js_workspace/gulp_test_project/package.json",
+		"/home/ldenkewi-mint/Documents/node_js_workspace/essential_training/04/app.js",
+		"/home/ldenkewi-mint/Documents/node_js_workspace/essential_training/04/flight/index.js",
+		"/home/ldenkewi-mint/.cache/.fr-ec6Gk2/Ex_Files_Node_JS_EssT/Exercise Files/chap04/02/final/app.js",
+		"/home/ldenkewi-mint/.cache/.fr-lSaN6O/Ex_Files_Node_JS_EssT/Exercise Files/chap04/02/final/flight/index.js",
+		"/home/ldenkewi-mint/Documents/node_js_workspace/essential_training/05/flight/index.js",
+		"/home/ldenkewi-mint/.cache/.fr-YYvtbo/Ex_Files_Node_JS_EssT/Exercise Files/chap04/01/final/flight/index.js",
+		"/home/ldenkewi-mint/.cache/.fr-ph5fsI/Ex_Files_Node_JS_EssT/Exercise Files/chap04/01/final/app.js",
+		"/home/ldenkewi-mint/Documents/larsqingtravel_website/.jshintrc",
+		"/home/ldenkewi-mint/Documents/node_js_workspace/gruntfile.js",
+		"/home/ldenkewi-mint/Documents/node_js_workspace/elab_grep.js",
+		"/home/ldenkewi-mint/Documents/node_js_workspace/spawn_test.js",
+		"/home/ldenkewi-mint/Documents/node_js_workspace/bad_child.js",
+		"/home/ldenkewi-mint/Documents/larsqingtravel_website/larsqingtravel.sublime-project",
+		"/home/ldenkewi-mint/.config/sublime-text-3/Packages/JSHint Gutter/README.md",
+		"/home/ldenkewi-mint/Documents/larsqingtravel_website/jsl.conf",
+		"/home/ldenkewi-mint/.config/sublime-text-3/Packages/JSHint Gutter/Default (Linux).sublime-keymap",
+		"/home/ldenkewi-mint/.config/sublime-text-3/Packages/SublimeLinter-jshint/README.md",
+		"/home/ldenkewi-mint/.config/sublime-text-3/Packages/SublimeLinter/SublimeLinter.sublime-settings",
+		"/home/ldenkewi-mint/Desktop/by_start_date.json",
+		"/home/ldenkewi-mint/Desktop/by_post_date.json",
+		"/home/ldenkewi-mint/Desktop/by_real_date.json",
+		"/home/ldenkewi-mint/Documents/larsqingtravel_website/about.html",
+		"/home/ldenkewi-mint/Documents/larsqingtravel_website/index.html",
+		"/home/ldenkewi-mint/.config/sublime-text-3/Packages/User/LineEndings.sublime-settings",
+		"/home/ldenkewi-mint/Documents/larsqingtravel_website/robots.txt",
+		"/home/ldenkewi-mint/.config/sublime-text-3/Packages/LineEndings/LineEndings.sublime-settings",
+		"/home/ldenkewi-mint/Documents/larsqingtravel_website/test.js",
+		"/home/ldenkewi-mint/.config/sublime-text-3/Packages/User/SublimeLinter.sublime-settings",
+		"/home/ldenkewi-mint/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
+		"/home/ldenkewi-mint/.config/sublime-text-3/Packages/Default/Preferences.sublime-settings",
+		"/home/ldenkewi-mint/.config/sublime-text-3/Packages/SublimeLinter-contrib-jslint/README.md",
+		"/home/ldenkewi-mint/Documents/larsqingtravel_website/main.js",
+		"/home/ldenkewi-mint/Documents/larsqingtravel_website/js/plugins.js",
+		"/home/ldenkewi-mint/.config/sublime-text-3/Packages/SublimeLinter-jsl/README.md",
+		"/home/ldenkewi-mint/Documents/larsqingtravel_website/larsqingtravel_website/js/main.js",
+		"/home/ldenkewi-mint/Documents/larsqingtravel_website/larsqingtravel_website/about.html",
+		"/home/ldenkewi-mint/Documents/larsqingtravel_website/larsqingtravel_website/home.html",
+		"/home/ldenkewi-mint/Documents/apache_home/blub.html",
+		"/home/ldenkewi-mint/Documents/apache_home/test_php.php",
+		"/home/ldenkewi-mint/Documents/apache_home/php/phpScript.php",
+		"/home/ldenkewi-mint/Documents/apache_home/css/main.css",
+		"/home/ldenkewi-mint/Documents/travel_website_html5/js/main.js",
+		"/home/ldenkewi-mint/Documents/apache_home/home_test2.html",
+		"/home/ldenkewi-mint/Documents/apache_home/home_test.html",
+		"/home/ldenkewi-mint/Documents/travel_website_html5/home.html",
+		"/home/ldenkewi-mint/Documents/apache_home/apache_index.html",
+		"/home/ldenkewi-mint/Documents/apache_home/css/main2.css",
+		"/home/ldenkewi-mint/Documents/travel_website_html5/php/phpScript.php",
+		"/home/ldenkewi-mint/Documents/apache_home/home_order_date_group_country",
+		"/home/ldenkewi-mint/Documents/travel_website_html5/css/main.css",
+		"/home/ldenkewi-mint/Documents/travel_website_html5/home_test2.html",
+		"/home/ldenkewi-mint/Documents/travel_website_html5/home_test.html",
+		"/home/ldenkewi-mint/Documents/travel_website_html5/phpTest2.php",
+		"/home/ldenkewi-mint/Documents/travel_website_html5/phpTest.php",
+		"/home/ldenkewi-mint/Documents/travel_website_html5/posts/indonesia2015/the_first_days_in_good_old_indo.html",
+		"/home/ldenkewi-mint/Documents/travel_website_html5/posts/indonesia2015/island_life_and_an_unexpected_end.html",
+		"/home/ldenkewi-mint/Documents/travel_website_html5/posts/indonesia2015/culture_shock_in_tana_toraja.html",
+		"/home/ldenkewi-mint/Documents/travel_website_html5/posts/sulawesi2015/island_life_and_an_unexpected_end.html",
+		"/home/ldenkewi-mint/Documents/travel_website_html5/posts/colombia2015/rat_fight_cartagena.html",
+		"/home/ldenkewi-mint/Documents/travel_website_html5/posts/colombia2015/first_encounter_in_south_america.html",
+		"/home/ldenkewi-mint/Documents/travel_website_html5/posts/sulawesi2015/culture_shock_in_tana_toraja.html",
+		"/home/ldenkewi-mint/Documents/travel_website_html5/posts/malaysia2015/while_missing_qing.html",
+		"/home/ldenkewi-mint/Documents/travel_website_html5/posts/malaysia2015/our_second_encounter.html",
+		"/home/ldenkewi-mint/Documents/travel_website_html5/posts/cambodia2015/summary_of_the_stations.html",
+		"/home/ldenkewi-mint/Documents/travel_website_html5/posts/cambodia2015/why_is_it_so_expensive.html",
+		"/home/ldenkewi-mint/Documents/travel_website_html5/posts/cambodia2015/some_local_meanings_and_stories.html",
+		"/home/ldenkewi-mint/Documents/travel_website_html5/posts/cambodia2015/thoughts_about_the_red_history.html",
+		"/home/ldenkewi-mint/Documents/travel_website_html5/posts/indonesia2014/jakarta.html",
+		"/home/ldenkewi-mint/Documents/travel_website_html5/posts/philippines2014/manila_again.html",
+		"/home/ldenkewi-mint/Documents/travel_website_html5/posts/philippines2014/malapascua.html",
+		"/home/ldenkewi-mint/Documents/travel_website_html5/posts/philippines2014/cebu_and_oslob.html",
+		"/home/ldenkewi-mint/Documents/travel_website_html5/posts/philippines2014/boracay_and_iloilo.html",
+		"/home/ldenkewi-mint/Documents/travel_website_html5/posts/philippines2014/sabang_bay.html",
+		"/home/ldenkewi-mint/Documents/travel_website_html5/posts/philippines2014/manila.html",
+		"/home/ldenkewi-mint/Documents/travel_website_html5/posts/newzealand2014/drive_n_camp.html",
+		"/home/ldenkewi-mint/Documents/travel_website_html5/posts/newzealand2014/art_deco_napier.html",
+		"/home/ldenkewi-mint/Documents/travel_website_html5/posts/newzealand2014/the_perfect_start.html",
+		"/home/ldenkewi-mint/Documents/travel_website_html5/posts/newzealand2014/woofing.html",
+		"/home/ldenkewi-mint/Documents/website/about.html",
+		"/home/ldenkewi-mint/Documents/website/home.html",
+		"/home/ldenkewi-mint/Documents/travel_website_html5/test.html",
+		"/home/ldenkewi-mint/Documents/travel_website_html5/about.html",
+		"/home/ldenkewi-mint/Documents/travel_website_html5/index.html",
+		"/home/ldenkewi-mint/Documents/travel_website_html5/css/normalize.css",
+		"/home/ldenkewi-mint/Documents/travel_website_html5/xml/rssfeed_larsqingtravel.xml",
+		"/home/ldenkewi-mint/Documents/website/xml/rssfeed_larsqingtravel.xml",
+		"/home/ldenkewi-mint/Documents/travel_website_html5/posts/sulawesi2015/the_first_days_in_good_old_indo.html",
+		"/home/ldenkewi-mint/Documents/travel_website_html5/posts/singapore2015/singapore.html",
+		"/home/ldenkewi-mint/Documents/travel_website_html5/posts/cambodia2015/the_phare_circus.html",
+		"/home/ldenkewi-mint/Documents/travel_website_html5/posts/cambodia2015/charity_project_opb.html",
+		"/home/ldenkewi-mint/Documents/travel_website_html5/browserconfig.xml",
+		"/home/ldenkewi-mint/Documents/travel_website_html5/our_second_encounter.html",
+		"/home/ldenkewi-mint/Documents/travel_website_html5/posts/rat_fight_cartagena.html",
+		"/home/ldenkewi-mint/Documents/travel_website_html5/posts/first_encounter_in_south_america.html",
+		"/home/ldenkewi-mint/Documents/travel_website_html5/css/style_travel.css",
+		"/home/ldenkewi-mint/Documents/travel_website_html5/posts/first_encounter_in_colombia.html",
+		"/home/ldenkewi-mint/Documents/travel_website_html5/home_new.html",
+		"/home/ldenkewi-mint/Documents/website/style_travel.css",
+		"/home/ldenkewi-mint/Documents/website/home_new.html",
+		"/home/ldenkewi-mint/Documents/travel-website.sublime-project"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"bootstrap",
+			"Travel page of Qing Gong and Lars Denkewit",
+			"    \n",
+			"col-lg-1 ",
+			"km",
+			"col-s-3",
+			"s",
+			"m",
+			"col-lg-1",
+			"Default",
+			"default",
+			"Default",
+			"default",
+			"Default",
+			"default",
+			"   <!--",
+			"\"data-post-order\"",
+			"data-",
+			"\n	",
+			"result",
+			"postArticle",
+			"postSection",
+			"		\n",
+			"F7F4DF",
+			"F8F3DF",
+			"F8F0DF",
+			"F0E8D8",
+			"F0E2CA",
+			"XXXX",
+			"C8AD7F",
+			"E1CFAF",
+			"#A67B5B",
+			"#C8AD7F",
+			"silver",
+			"#e5e5e5",
+			"20px 20px 20px 20px",
+			"10px",
+			"5px",
+			"66",
+			"48",
+			"33%",
+			"icon",
+			"#main ~ footer span.email_icon",
+			"#main ~ footer span.rss_icon",
+			"inner",
+			"meta",
+			"htmlLoadingMessage",
+			"<a href=\"http://www.larsqingtravel.ldenkewi-it.de/xml/rssfeed_larsqingtravel.xml\">\n          <span class=\"email_icon\"/>\n        </a>",
+			"footer span",
+			"JOIN",
+			"join",
+			"JOIN",
+			"join",
+			"JOIN",
+			"join",
+			"select",
+			" \"",
+			"script",
+			"e",
+			"\";\n",
+			"		\n",
+			"relative",
+			"postArticleTpl",
+			"}\n",
+			"scrollToElement",
+			"post_content",
+			"scrollToElement",
+			"div.post",
+			".click",
+			"click",
+			"		//",
+			"post",
+			"div.post",
+			"_undo",
+			"find_under",
+			"div.post",
+			"class=\"post\"",
+			"\"#post\"",
+			"\".post\"",
+			"date_and_country",
+			"post_date",
+			"();",
+			"#ff5100",
+			"objectCounter",
+			"flight",
+			"$_GET",
+			"\");\n",
+			"css_dest",
+			"tab",
+			"alt+tab",
+			";}",
+			"meta_data",
+			"page_footer",
+			"section.post ",
+			"div",
+			"post_metadata",
+			"section.post ",
+			"#main article ",
+			"();\n",
+			"mustacheHtml",
+			"closeAndRemovePostContent",
+			"toggleClass",
+			"data",
+			":",
+			"\",\"",
+			"\" : \"",
+			"\",\"",
+			"\":\"",
+			":",
+			"JSON",
+			"box",
+			"==",
+			"===",
+			"==",
+			" ===",
+			"==",
+			" ===",
+			"==",
+			"flickr",
+			"articleClass",
+			"getAllPostsAndMetaDataFromDBAsync",
+			"vertical-align",
+			"class",
+			"id",
+			"unreachable",
+			"id",
+			"div.post_footer",
+			"footer"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"col-lg-1 col-sm-3 ",
+			"col-sm-3",
+			"col-lg-1 col-m-2 col-s-3 col-xs-4",
+			"\"data-active-order\"",
+			"nav span.email_icon",
+			"nav span.rss_icon",
+			"\" , \"",
+			"\":\"",
+			"\" , \"",
+			"\" , \"\\n",
+			"\" : \"",
+			" : ",
+			"footer",
+			"\\'",
+			"referencedPost",
+			"metaDataType",
+			"articleClass",
+			"<div data-link=",
+			"<span class=\"open_indicator\">+",
+			"', NULL)",
+			"\\'",
+			"),",
+			"</section>",
+			"<section class=\"post\">",
+			"section.post ",
+			"section.post",
+			"selection.post",
+			"<selection class=\"post\">",
+			"closeAndRemovePostContent",
+			"</article>",
+			"referencedPostLink",
+			"linkObject",
+			"article",
+			"<article",
+			"name=\"\" class=\"post closed\"",
+			"post closed",
+			"right_column",
+			"",
+			"</p><p>",
+			"</p>",
+			"images/sulawesi2015/",
+			"images/sulawesi2015",
+			"loadingMessageClass",
+			"dotLoadingMessageClass",
+			"/media/ldenkewi-mint/Data/Documents/thunderbird_mail_profile/ImapMail",
+			"/media/ldenkewi-mint/Data/Documents/thunderbird_mail_profile/Mail"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "WebContent/index.xhtml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2810,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 967.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 34.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 126.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": ".travelManager.sublime-project",
+	"replace":
+	{
+		"height": 86.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"~/Documents/larsqingtravel_website/larsqingtravel.sublime-project"
+			]
+		],
+		"width": 579.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 170.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
