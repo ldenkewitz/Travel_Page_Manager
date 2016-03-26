@@ -30,7 +30,7 @@
 		
 			<h:form id="createNewPost" styleClass="form-horizontal" p:role="form">
 			
-				<h:messages styleClass="alert alert-danger"/>
+				<h:messages styleClass="alert alert-danger" globalOnly="true"/>
 			
 				<div class="form-group">
 					<h:outputLabel styleClass="col-sm-5 control-label" for="author">
@@ -38,7 +38,12 @@
 						<div class="col-sm-7">
 							<h:inputText class="form-control" value="#{postController.currentPost.author}"
 	              id="author" p:placeholder="Name of author" required="true"
-								requiredMessage="Author is required"/>
+								requiredMessage="Author is required"> 
+<!-- 								validatorMessage="Author must be between {1} and {2} characters long"> -->
+<!--          				<f:validateLength minimum="1" maximum="45" /> -->
+         				<f:validateBean disabled="false"/>
+							</h:inputText>
+							<h:message for="author" styleClass="alert validation-error"/>
 						</div>
 				</div>
 				
@@ -49,10 +54,13 @@
 							<h:inputText class="form-control" autocomplete="off"
 	              value="#{postController.currentPost.contentList.get(0).caption}"
 	              id="caption" p:placeholder="Title of the post" required="true"
-	              requiredMessage="Caption is required"/>
+	              requiredMessage="Caption is required">
+         				<f:validateLength minimum="1" maximum="120" />
+								<f:validateBean disabled="false"/>
+							</h:inputText>
+							<h:message for="caption" styleClass="alert validation-error"/>
 						</div>
 				</div>
-				
 				
 				<div class="form-group">
 					<h:outputLabel styleClass="col-sm-5 control-label" for="flickr">
@@ -60,7 +68,11 @@
 					<div class="col-sm-7">
 						<h:inputText class="form-control"
               value="#{postController.currentPost.flickrAddress}"
-              id="flickr" p:placeholder="Address of flickr album"/>
+              id="flickr" p:placeholder="Address of flickr album">
+         				<f:validateLength maximum="240" />
+								<f:validateBean disabled="false"/>
+							</h:inputText>
+							<h:message for="flickr" styleClass="alert validation-error"/>
 					</div>
 				</div>
 				
@@ -69,17 +81,21 @@
 				<div class="form-group">
 					<h:outputLabel styleClass="col-sm-3 control-label" for="startDateCountry">
 					Date of arrival in this country:</h:outputLabel>
-						<div class="col-sm-3">
-							<h:inputText class="form-control" value="#{postController.startDateCountry}"
-	              id="startDateCountry" p:placeholder="yyyy-mm-dd" required="true"
-								requiredMessage="Arrival date is required"/>
-						</div>
+					<div class="col-sm-3">
+						<h:inputText class="form-control" value="#{postController.startDateCountry}"
+              id="startDateCountry" p:placeholder="yyyy-mm-dd" required="true"
+							requiredMessage="Arrival date is required">
+							<f:validateBean disabled="false"/>
+						</h:inputText>
+						<h:message for="startDateCountry" styleClass="alert validation-error"/>
+					</div>
 					<h:outputLabel styleClass="col-sm-3 control-label" for="endDateCountry">
 					Date of departure from this country:</h:outputLabel>
 						<div class="col-sm-3">
 							<h:inputText class="form-control" value="#{postController.endDateCountry}"
 	              id="endDateCountry" p:placeholder="yyyy-mm-dd" required="true"
 								requiredMessage="Departure date is required"/>
+							<h:message for="endDateCountry" styleClass="alert validation-error"/>
 						</div>
 				</div>
 				
@@ -90,11 +106,13 @@
 					Country of travel:</h:outputLabel>
 						<div class="col-sm-3">
 							<h:selectOneMenu value="#{postController.currentPost.contentList.get(0).country}" 
-							id="country" class="form-control" required="true"
-							requiredMessage="Country is required">
+							id="country" class="form-control" required="true" requiredMessage="Country is required">
 								<f:selectItem itemValue="" itemLabel="---"/>
 								<f:selectItems value="#{postController.availablecountries}" />
+         				<f:validateLength maximum="90" />
+         				<f:validateBean disabled="false"/>
 							</h:selectOneMenu>
+							<h:message for="country" styleClass="alert validation-error"/>
 						</div>
 						
 						
@@ -106,7 +124,10 @@
 							requiredMessage="Language is required">
 								<f:selectItem itemValue="" itemLabel="---"/>
 								<f:selectItems value="#{postController.availablelanguages}"/>
+         				<f:validateLength maximum="90" />
+         				<f:validateBean disabled="false"/>
 							</h:selectOneMenu>
+							<h:message for="language" styleClass="alert validation-error"/>
 						</div>
 				</div>
 
@@ -119,6 +140,7 @@
               value="#{postController.currentPost.contentList.get(0).content}"
               id="content" p:placeholder="Title of the post" required="true"
 							requiredMessage="Content is required"/>
+						<h:message for="content" styleClass="alert validation-error"/>
 					</div>
 				</div>
 				
@@ -127,14 +149,16 @@
 					Date of post:</h:outputLabel>
 						<div class="col-sm-3">
 							<h:inputText class="form-control" value="#{postController.postDate}"
-	              id="postDate" p:placeholder="yyyy-mm-dd (default: now)"/>
+	              id="postDate" p:placeholder="yyyy-MM-dd HH:mm:ss" required="true"
+								requiredMessage="Date of post is required"/>
+							<h:message for="postDate" styleClass="alert validation-error"/>
 						</div>
 				</div>
 				
 				<p class="buttons_bar_create_post">
 					<h:commandButton styleClass="btn btn-md btn-primary" 
-						action="#{postController.createPost()}" value="Create post" />
-					<h:link styleClass="btn btn-primary" outcome="index.xhtml}" value="Back" />
+						action="#{postController.savePost()}" value="Create post" />
+					<h:link styleClass="btn btn-primary" outcome="index.xhtml" value="Back" />
 				</p>
 				
 			</h:form> <!-- #createNewPost -->

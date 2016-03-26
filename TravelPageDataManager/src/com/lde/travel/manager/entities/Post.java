@@ -15,6 +15,11 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+import com.lde.util.validation.Past;
 
 @Entity
 @Table(name="POST")
@@ -29,26 +34,30 @@ public class Post {
   @Column(name="POST_ID", nullable = false, insertable = true, updatable = true)
 	private int id;
 	
-	@Column(nullable = false, length=45)
+	@Column(nullable = false, length=45) 
+	@NotNull @Size(min = 1, max = 45, message = "{post.author.size}")
 	private String author;
 	
-	@Column(columnDefinition = "DATETIME NOT NULL")
+	@Column(columnDefinition = "DATETIME NOT NULL") @NotNull
 //	@Temporal(TemporalType.TIMESTAMP)
 	private LocalDateTime postDate; //datetime 2015-12-29 12:00:00
 	//LocalDate real_date; //date 2014-01-05
 	
-	@Column(columnDefinition = "DATE NOT NULL")
+	@Column(columnDefinition = "DATE NOT NULL") 
+	@NotNull @Past(message="{post.startDateCountry.past}")
 //	@Temporal(TemporalType.DATE)
 	private LocalDate startDateCountry;
 	
-	@Column(columnDefinition = "DATE NOT NULL")
+	@Column(columnDefinition = "DATE NOT NULL") @NotNull
 //	@Temporal(TemporalType.DATE)
 	private LocalDate endDateCountry;
 	
+	@Size(max = 240, message = "{post.flickrAddress.size}")
 	private String flickrAddress;
 	
 	// can have several content due to different translations/Locale
-	@OneToMany(mappedBy = "parent",cascade=CascadeType.ALL, orphanRemoval=true)
+	@OneToMany(mappedBy = "parent",cascade=CascadeType.ALL, orphanRemoval=true) 
+	@NotNull @Valid()
 	private List<PostI18nContent> contentList = new ArrayList<>();
 	
 	public Post() {	}

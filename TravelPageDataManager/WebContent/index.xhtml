@@ -21,12 +21,12 @@
 	<div class="main-container">
 		
 		<div class="page-header">
-			<h2>PostManager for the travel blog @ larsqingtravel.ldenkewi-it.de</h2>
+			<h2>Post-Data-Manager <small>for the travel blog @ larsqingtravel.ldenkewi-it.de</small></h2>
 		</div>
 
 		<div class="main-content">
 		
-			<h:messages styleClass="alert alert-danger"/>
+			<h:messages styleClass="alert alert-danger" globalOnly="false"/>
 		
 			<h2>List of posts</h2>
 			
@@ -79,10 +79,10 @@
 	            <f:param name="id" value="#{post.id}" />
 	            <span class="glyphicon glyphicon-edit"></span>
 	          </h:commandLink>
-	          <h:link styleClass="btn" outcome="removePost.xhtml?id=#{post.id}" includeViewParams="true">
+	          <h:commandLink action="#{postController.forwardToRemovePost(post.id)}" styleClass="btn"> 
 	            <f:param name="id" value="#{post.id}" />
 	            <span class="glyphicon glyphicon-trash"></span>
-	          </h:link>
+	          </h:commandLink>
 					</h:column>
 				</h:dataTable>
 

@@ -16,6 +16,7 @@ import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.faces.view.ViewScoped;
 import javax.inject.Named;
+import javax.validation.ConstraintViolationException;
 
 import com.lde.travel.manager.entities.Post;
 import com.lde.travel.manager.entities.PostI18nContent;
@@ -171,7 +172,7 @@ public class TravelManagerController implements Serializable {
 		return LocalDateTime.parse(text, POST_DATE_FORMATTER);
 	}
 	
-	public String createPost() {
+	public String savePost() {
 		if(postDate == null || postDate.trim().isEmpty()) {
 			currentPost.setPostDate(LocalDateTime.now());
 		} else {
@@ -183,6 +184,14 @@ public class TravelManagerController implements Serializable {
 			postService.createPost(this.currentPost);
 			return "index.xhtml";
 		} catch(EJBException ex) {
+//			if(ex.getCause() instanceof ConstraintViolationException) {
+//				String message = "";
+//				((ConstraintViolationException)ex.getCause()).getConstraintViolations().forEach(
+//						violation -> message.concat(violation.getMessage().concat("\n")) );
+//				FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(
+//						FacesMessage.SEVERITY_ERROR, message, null));
+//				return "";
+//			}
 			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, 
 					"Some error appeared when writing the data.", null));
 			return "index.xhtml";
@@ -233,12 +242,17 @@ public class TravelManagerController implements Serializable {
 		return "editPost.xhtml?faces-redirect=true&includeViewParams=true";
 	}
 	
-//	public void deletePost() {
-//		if(posts != null && posts.containsKey(this.postAuthor)) {
-//			Post post = posts.remove(this.postAuthor);
-//			postService.deletePost(post);
-//		}
-//	}
+	public String forwardToRemovePost(int id) {
+		this.id = id;
+		return "removePost.xhtml?faces-redirect=true&includeViewParams=true";
+	}
+	
+	public String deletePost() {
+		if(currentPost != null) {
+			postService.deletePost(currentPost);
+		}
+		return "index.xhtml";
+	}
 	
 //	public void addPostContent() {
 //		if(this.currentPost != null) {

@@ -7,6 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name="POST_IMAGE")
@@ -18,12 +19,14 @@ public class PostImage {
 	private int id;
 	
   @Column(columnDefinition="mediumblob")
+  @NotNull
 	private byte[] blobImg;
 	private String title;
 	private String caption;
 	
 	// TODO: change to ManyToMany relationship -> one post can have several different translations which share their images
 	@ManyToOne(optional=false)
+	@NotNull
 	private PostI18nContent parent;
 
 	public PostImage() {	}

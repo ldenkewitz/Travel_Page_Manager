@@ -12,6 +12,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name="POST_I18N_CONTENT")
@@ -22,19 +24,24 @@ public class PostI18nContent {
   @Column(name="CONTENT_ID", nullable = false, insertable = true, updatable = true)
   private int id;
   
-  @ManyToOne(optional=false)
+  @ManyToOne(optional=false) 
+  @NotNull
   private Post parent;
   
-  @Column(nullable = false, length=90)
+  @Column(nullable = false, length=90) 
+  @NotNull @Size(min = 1, max = 90, message = "{postI18cContent.language.size}")
   private String language;
   
-  @Column(nullable = false, length=120, unique=true)
+  @Column(nullable = false, length=120, unique=true) 
+  @NotNull @Size(min = 1, max = 120, message = "{postI18cContent.caption.size}")
   private String caption;
 	
-  @Column(nullable = false, length=90)
+  @Column(nullable = false, length=90) 
+  @NotNull @Size(min = 1, max = 90, message = "{postI18cContent.country.size}")
   private String country;
 	
 	@Column(columnDefinition = "TEXT NOT NULL") // MySQL-text-data-type
+	@NotNull
 	private String content;
 
 	@OneToMany(mappedBy = "parent", orphanRemoval=true, cascade=CascadeType.ALL)

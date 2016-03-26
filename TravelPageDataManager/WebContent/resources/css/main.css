@@ -31,3 +31,12 @@
 
 .buttons_bar_create_post input {margin: 0 5px;}
 .buttons_bar_create_post a {margin: 0 5px;}
+
+.validation-error {
+    display: block;
+    margin: 5px 15px 5px 15px;
+    padding: 8px 15px 8px 15px;
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+}
