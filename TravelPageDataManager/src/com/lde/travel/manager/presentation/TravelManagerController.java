@@ -16,7 +16,6 @@ import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.faces.view.ViewScoped;
 import javax.inject.Named;
-import javax.validation.ConstraintViolationException;
 
 import com.lde.travel.manager.entities.Post;
 import com.lde.travel.manager.entities.PostI18nContent;
@@ -254,19 +253,6 @@ public class TravelManagerController implements Serializable {
 		return "index.xhtml";
 	}
 	
-//	public void addPostContent() {
-//		if(this.currentPost != null) {
-//			postService.addPostContent(this.currentPost, Locale.getDefault(), 
-//					this.postContentCaption, "Bolivia", "text text text....blablabla...");
-//		}
-//	}
-	
-//	public void updatePostContent() {
-//		if(this.lastContent != null) {
-//			this.lastContent.setCaption(this.postContent);;
-//			postService.updatePostContent(this.lastContent);
-//		}
-//	}
 	
 //	public void addPostImage() {
 //		if(this.currentPost != null && !this.currentPost.getContentList().isEmpty() && this.postImage != null) {
@@ -275,16 +261,6 @@ public class TravelManagerController implements Serializable {
 //			this.currentPost.getContentList().set(0,updated);
 //		}
 //	}
-	
-//	public void deletePostContent() {
-//		if(this.lastContent != null) {
-//			postService.removePostContent(this.lastContent);
-//			this.lastContent = null;
-//		}
-//		
-//	}
-
-
 	
 	
 }

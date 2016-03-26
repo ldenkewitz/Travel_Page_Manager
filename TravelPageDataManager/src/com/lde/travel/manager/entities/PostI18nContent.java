@@ -18,6 +18,7 @@ import javax.validation.constraints.Size;
 @Entity
 @Table(name="POST_I18N_CONTENT")
 public class PostI18nContent {
+//TODO: Bean-Validation isn't executed for this entity. Whats's the problem? -> manual call via validator?
 	
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
