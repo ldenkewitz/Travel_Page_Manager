@@ -1,0 +1,39 @@
+<!DOCTYPE html> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough"> 
+
+<h:head>
+	<meta charset="utf-8" />
+  <title>TravelPostManager</title>
+  <meta name="description" content="A CRUD application to manage the posts from our journey" />
+  <meta name="author" content="Lars Denkewitz, larsqingtravel@ldenkewi-it.de"/>
+
+	<link href="#{request.contextPath}/resources/css/bootstrap.min.css" rel="stylesheet"/>
+	<link href="#{request.contextPath}/resources/css/bootstrap-theme.min.css" rel="stylesheet"/>
+	<link href="#{request.contextPath}/resources/css/main.css" rel="stylesheet"/>
+</h:head> 
+
+<h:body> 
+	<div class="main-container">
+	
+		<header class="page-header text-center">
+			<h1>Post-Data-Manager <br/><small>for the travel blog @ larsqingtravel.ldenkewi-it.de</small></h1>
+		</header>
+		
+		<div id="content">
+      <div id="main" class="mainContent">
+        <ui:insert name="content">
+          Reserved for Main Content
+        </ui:insert>
+      </div>
+    </div>
+	    
+	</div> <!-- .main-container -->
+	
+	<script src="#{request.contextPath}/resources/js/jquery-1.12.0.min.js"></script>
+  <script src="#{request.contextPath}/resources/js/bootstrap.min.js"></script>
+</h:body> 
+</html>

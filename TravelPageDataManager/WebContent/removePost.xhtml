@@ -6,49 +6,28 @@
       xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
       xmlns:post="http://xmlns.jcp.org/jsf/composite/components">
 
-<h:head>
-	<meta charset="utf-8" />
-  <title>Remove post</title>
-  <meta name="description" content="A CRUD application to manage the posts from our journey" />
-  <meta name="author" content="Lars Denkewitz, larsqingtravel@ldenkewi-it.de"/>
+	<ui:composition template="/template-mainframe.xhtml">
+		<ui:define name="content">
 
-	<link href="#{request.contextPath}/resources/css/bootstrap.min.css" rel="stylesheet"/>
-	<link href="#{request.contextPath}/resources/css/bootstrap-theme.min.css" rel="stylesheet"/>
-	<link href="#{request.contextPath}/resources/css/main.css" rel="stylesheet"/>
-	
-	<f:metadata>
-		<f:viewParam name="id" value="#{postController.id}" />
-		<f:event listener="#{postController.findPostById()}" type="preRenderView"></f:event>
-	</f:metadata>
-</h:head> 
-
-<h:body> 
-	
-	<div class="main-container">
-		
-		<div class="page-header">
-			<h2>Remove post</h2>
-		</div>
-
-		<div class="main-content">
-		
-			<h:form id="createNewPost" styleClass="form-horizontal" p:role="form">
+			<div class="main-content">
 			
-				<post:postComposite disableControls="true" />
+				<h2>Remove a post</h2>
+				<br/>
 				
-				<p class="buttons_bar_create_post">
-					<h:commandButton styleClass="btn btn-md btn-primary" 
-						action="#{postController.deletePost()}" value="Delete post" immediate="true"/>
-					<h:link styleClass="btn btn-primary" outcome="index.xhtml" value="Back" />
-				</p>
+				<h:form id="createNewPost" styleClass="form-horizontal" p:role="form">
 				
-			</h:form> <!-- #createNewPost -->
+					<post:postComposite disableControls="true" />
+					
+					<p class="buttons_bar_create_post">
+						<h:commandButton styleClass="btn btn-md btn-primary" 
+							action="#{postController.deletePost()}" value="Delete post" immediate="true"/>
+						<h:link styleClass="btn btn-primary" outcome="index.xhtml" value="Back" />
+					</p>
+				
+				</h:form> <!-- #createNewPost -->
 
-		</div> <!-- .mainContent -->
+			</div> <!-- .mainContent -->
+		</ui:define>
+	</ui:composition>
 		
-	</div> <!-- .main-container -->
-	
-	<script src="#{request.contextPath}/resources/js/jquery-1.12.0.min.js"></script>
-  <script src="#{request.contextPath}/resources/js/bootstrap.min.js"></script>
-</h:body> 
 </html>

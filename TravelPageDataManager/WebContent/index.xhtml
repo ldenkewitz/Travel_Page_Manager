@@ -5,101 +5,82 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://xmlns.jcp.org/jsf/passthrough"> 
 
-<h:head>
-	<meta charset="utf-8" />
-  <title>TravelPostManager</title>
-  <meta name="description" content="A CRUD application to manage the posts from our journey" />
-  <meta name="author" content="Lars Denkewitz, larsqingtravel@ldenkewi-it.de"/>
-
-	<link href="#{request.contextPath}/resources/css/bootstrap.min.css" rel="stylesheet"/>
-	<link href="#{request.contextPath}/resources/css/bootstrap-theme.min.css" rel="stylesheet"/>
-	<link href="#{request.contextPath}/resources/css/main.css" rel="stylesheet"/>
-</h:head> 
-
-<h:body> 
+	<ui:composition template="/template-mainframe.xhtml">
+		<ui:define name="content">
+			
+			<div class="main-content">
+						
+				<h2>List of posts</h2>
+				
+				<h:messages styleClass="alert alert-danger"/>
+				
+				<h:form id="postList" styleClass="form-horizontal" p:role="form">
+				
+					<h:dataTable id="postTable" styleClass="table table-striped table-bordered post-table" 
+						value="#{postController.retrieveAllPosts()}" var="post">
+						<h:column>
+							<f:facet name="header">
+								<h:outputText value="Author"></h:outputText>
+							</f:facet>
+							<h:outputText value="#{post.author}"></h:outputText>
+						</h:column>
+						<h:column>
+							<f:facet name="header">
+								<h:outputText value="Caption"></h:outputText>
+							</f:facet>
+							<h:outputText value="#{post.contentList.get(0).caption}"></h:outputText>
+						</h:column>
+						<h:column>
+							<f:facet name="header">
+								<h:outputText value="Country"></h:outputText>
+							</f:facet>
+							<h:outputText value="#{post.contentList.get(0).country}"></h:outputText>
+						</h:column>
+						<h:column>
+							<f:facet name="header">
+								<h:outputText value="Language"></h:outputText>
+							</f:facet>
+							<h:outputText value="#{post.contentList.get(0).language}"></h:outputText>
+						</h:column>
+						<h:column>
+							<f:facet name="header">
+								<h:outputText value="Date of post"></h:outputText>
+							</f:facet>
+							<h:outputText value="#{post.postDate.toLocalDate()}"></h:outputText>
+						</h:column>
+						<h:column>
+							<f:facet name="header">
+								<h:outputText value="Date of travel"></h:outputText>
+							</f:facet>
+							<h:outputText value="#{post.startDateCountry}"></h:outputText>
+						</h:column>
+						
+						<h:column>
+		          <f:facet name="header">
+		         		 <h:outputText value="Action" />
+		          </f:facet>
+		          <h:commandLink action="#{postController.forwardToEditPost(post.id)}" styleClass="btn"> 
+		            <f:param name="id" value="#{post.id}" />
+		            <span class="glyphicon glyphicon-edit"></span>
+		          </h:commandLink>
+		          <h:commandLink action="#{postController.forwardToRemovePost(post.id)}" styleClass="btn"> 
+		            <f:param name="id" value="#{post.id}" />
+		            <span class="glyphicon glyphicon-trash"></span>
+		          </h:commandLink>
+						</h:column>
+					</h:dataTable>
 	
-	<div class="main-container">
-		
-		<div class="page-header text-center">
-			<h1>Post-Data-Manager <br/><small>for the travel blog @ larsqingtravel.ldenkewi-it.de</small></h1>
-		</div>
-
-		<div class="main-content">
-		
-			<h:messages styleClass="alert alert-danger" globalOnly="false"/>
-		
-			<h3>List of posts</h3>
-			
-			<h:form id="postList" styleClass="form-horizontal" p:role="form">
-			
-				<h:dataTable id="postTable" styleClass="table table-striped table-bordered post-table" 
-					value="#{postController.retrieveAllPosts()}" var="post">
-					<h:column>
-						<f:facet name="header">
-							<h:outputText value="Author"></h:outputText>
-						</f:facet>
-						<h:outputText value="#{post.author}"></h:outputText>
-					</h:column>
-					<h:column>
-						<f:facet name="header">
-							<h:outputText value="Caption"></h:outputText>
-						</f:facet>
-						<h:outputText value="#{post.contentList.get(0).caption}"></h:outputText>
-					</h:column>
-					<h:column>
-						<f:facet name="header">
-							<h:outputText value="Country"></h:outputText>
-						</f:facet>
-						<h:outputText value="#{post.contentList.get(0).country}"></h:outputText>
-					</h:column>
-					<h:column>
-						<f:facet name="header">
-							<h:outputText value="Language"></h:outputText>
-						</f:facet>
-						<h:outputText value="#{post.contentList.get(0).language}"></h:outputText>
-					</h:column>
-					<h:column>
-						<f:facet name="header">
-							<h:outputText value="Date of post"></h:outputText>
-						</f:facet>
-						<h:outputText value="#{post.postDate.toLocalDate()}"></h:outputText>
-					</h:column>
-					<h:column>
-						<f:facet name="header">
-							<h:outputText value="Date of travel"></h:outputText>
-						</f:facet>
-						<h:outputText value="#{post.startDateCountry}"></h:outputText>
-					</h:column>
-					
-					<h:column>
-	          <f:facet name="header">
-	         		 <h:outputText value="Action" />
-	          </f:facet>
-	          <h:commandLink action="#{postController.forwardToEditPost(post.id)}" styleClass="btn"> 
-	            <f:param name="id" value="#{post.id}" />
-	            <span class="glyphicon glyphicon-edit"></span>
-	          </h:commandLink>
-	          <h:commandLink action="#{postController.forwardToRemovePost(post.id)}" styleClass="btn"> 
-	            <f:param name="id" value="#{post.id}" />
-	            <span class="glyphicon glyphicon-trash"></span>
-	          </h:commandLink>
-					</h:column>
-				</h:dataTable>
-
-			</h:form>
-			
-			<hr class="subfeaturette-divider" />
-
-			<h3>Available actions</h3>
-
-			<h:link styleClass="btn btn-primary" outcome="newPost.xhtml" value="Create a new post" />
-
-		</div> <!-- .main-Content -->
-		
-		
-	</div> <!-- .main-container -->
+				</h:form>
+				
+				<hr class="subfeaturette-divider" />
 	
-	<script src="#{request.contextPath}/resources/js/jquery-1.12.0.min.js"></script>
-  <script src="#{request.contextPath}/resources/js/bootstrap.min.js"></script>
-</h:body> 
+				<h3>Available actions</h3>
+	
+				<h:link styleClass="btn btn-primary" outcome="newPost.xhtml" value="Create a new post" />
+	
+			</div> <!-- .main-Content -->
+		
+
+		</ui:define>
+	</ui:composition>	 
 </html>

@@ -6,160 +6,157 @@
       xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
       xmlns:comp="http://xmlns.jcp.org/jsf/composite"> 
 
-	<h:body>
-		<comp:interface>
-			<comp:attribute name="disableControls" default="false"></comp:attribute>
-		</comp:interface>
-		
-		<comp:implementation>
-			<ui:insert name="debuggingView">
-      	<ui:debug/>
-     	</ui:insert>
-     	
-     	<h:messages styleClass="alert alert-danger" globalOnly="true"/>
-		
-			<div class="form-group">
-				<h:outputLabel styleClass="col-sm-5 control-label" for="author">Author:</h:outputLabel>
-					<div class="col-sm-7">
-						<h:inputText class="form-control" value="#{postController.currentPost.author}"
-	             id="author" p:placeholder="Name of author" required="true"
-							requiredMessage="Author is required" disabled="#{cc.attrs.disableControls}">
-	<!-- 								 validatorMessage="Author must be between 1 and 45 characters long"> -->
-	       				<f:validateLength minimum="1" maximum="45" />
-	       				<f:validateBean disabled="false"/>
-	       				<f:ajax event="blur" render="authorError"/>
-						</h:inputText>
-						<h:message for="author" id="authorError" styleClass="alert validation-error"/>
-					</div>
-			</div>
-			
-			<div class="form-group">
-				<h:outputLabel styleClass="col-sm-5 control-label" for="caption">Post title:</h:outputLabel>
-				<!-- 
-					- need to have EJB access in the FacesValidator which is not possible to inject with @EJB (not container managed)
-					  -> therefore use as a CDI managed bean (@Named) instead @FacesValidator
-				-->
-					<h:inputHidden id="aggregatCaptionHidden" lable="hiddenValue1" value="true">
-						<f:validator binding="#{captionValidator}" /> <!-- use of binding instead validatorId because its not a FacesValidator -->
-						<f:attribute name="currentPostId" value="#{postController.id}" />
-						<f:attribute name="postCaption" value="#{bindedCaptionValue}" />
-					</h:inputHidden>
-					<div class="col-sm-7">
-						<h:inputText class="form-control" autocomplete="off" binding="#{bindedCaptionValue}"
-	             value="#{postController.currentPost.contentList.get(0).caption}"
-	             id="caption" p:placeholder="Title of the post" required="true"
-	             requiredMessage="Caption is required" disabled="#{cc.attrs.disableControls}"> 
-	       				<f:validateLength minimum="1" maximum="120" />
-	       				<f:ajax event="blur" render="captionError"/>
-							<f:validateBean disabled="false"/>
-						</h:inputText>
-						<h:message for="caption aggregatCaptionHidden" id="captionError" styleClass="alert validation-error"/>
-						<h:message for="aggregatCaptionHidden" id="aggregatCaptionError" styleClass="alert validation-error"/>
-					</div>
-			</div>
-			
-			<div class="form-group">
-				<h:outputLabel styleClass="col-sm-5 control-label" for="flickr">
-				Address of the flickr album (can be empty):</h:outputLabel>
-				<div class="col-sm-7">
-					<h:inputText class="form-control" value="#{postController.currentPost.flickrAddress}"
-            id="flickr" p:placeholder="Address of flickr album"  disabled="#{cc.attrs.disableControls}">
-       				<f:validateLength maximum="240" />
-       				<f:ajax event="blur" render="flickrError"/>
-						<f:validateBean disabled="false"/>
+	<comp:interface>
+		<comp:attribute name="disableControls" default="false"></comp:attribute>
+	</comp:interface>
+	
+	<comp:implementation>
+		<ui:insert name="debuggingView">
+     	<ui:debug/>
+    	</ui:insert>
+    	
+    	<h:messages styleClass="alert alert-danger" globalOnly="true"/>
+	
+		<div class="form-group">
+			<h:outputLabel styleClass="col-sm-3 control-label" for="author">Author:</h:outputLabel>
+				<div class="col-sm-9">
+					<h:inputText class="form-control" value="#{postController.currentPost.author}"
+             id="author" p:placeholder="Name of author" required="true"
+						requiredMessage="Author is required" disabled="#{cc.attrs.disableControls}">
+<!-- 								 validatorMessage="Author must be between 1 and 45 characters long"> -->
+       				<f:validateLength minimum="1" maximum="45" />
+       				<f:validateBean disabled="false"/>
+       				<f:ajax event="blur" render="authorError"/>
 					</h:inputText>
-					<h:message for="flickr" id="flickrError" styleClass="alert validation-error"/>
+					<h:message for="author" id="authorError" styleClass="alert validation-error"/>
 				</div>
-			</div>
-			
-			<hr class="subfeaturette-divider" />
-			
-			<div class="form-group">
-				<h:outputLabel styleClass="col-sm-3 control-label" for="startDateCountry">
-					Date of arrival in this country:</h:outputLabel>
-				<div class="col-sm-3">
-					<h:inputText class="form-control" value="#{postController.startDateCountry}"
-	            id="startDateCountry" p:placeholder="yyyy-mm-dd" required="true"
-							requiredMessage="Arrival date is required" disabled="#{cc.attrs.disableControls}">
-						<f:ajax event="blur" render="startDateError"/>
+		</div>
+		
+		<div class="form-group">
+			<h:outputLabel styleClass="col-sm-3 control-label" for="caption">Post title:</h:outputLabel>
+			<!-- 
+				- need to have EJB access in the FacesValidator which is not possible to inject with @EJB (not container managed)
+				  -> therefore use as a CDI managed bean (@Named) instead @FacesValidator
+			-->
+				<h:inputHidden id="aggregatCaptionHidden" lable="hiddenValue1" value="true">
+					<f:validator binding="#{captionValidator}" /> <!-- use of binding instead validatorId because its not a FacesValidator -->
+					<f:attribute name="currentPostId" value="#{postController.id}" />
+					<f:attribute name="postCaption" value="#{bindedCaptionValue}" />
+				</h:inputHidden>
+				<div class="col-sm-9">
+					<h:inputText class="form-control" autocomplete="off" binding="#{bindedCaptionValue}"
+             value="#{postController.currentPost.contentList.get(0).caption}"
+             id="caption" p:placeholder="Title of the post" required="true"
+             requiredMessage="Caption is required" disabled="#{cc.attrs.disableControls}"> 
+       				<f:validateLength minimum="1" maximum="120" />
+       				<f:ajax event="blur" render="captionError"/>
 						<f:validateBean disabled="false"/>
 					</h:inputText>
-					<h:message for="startDateCountry" id="startDateError" styleClass="alert validation-error"/>
+					<h:message for="caption aggregatCaptionHidden" id="captionError" styleClass="alert validation-error"/>
+					<h:message for="aggregatCaptionHidden" id="aggregatCaptionError" styleClass="alert validation-error"/>
+				</div>
+		</div>
+		
+		<div class="form-group">
+			<h:outputLabel styleClass="col-sm-3 control-label" for="flickr">
+			Flickr album address:</h:outputLabel>
+			<div class="col-sm-9">
+				<h:inputText class="form-control" value="#{postController.currentPost.flickrAddress}"
+           id="flickr" p:placeholder="Address of flickr album (can be empty)"  disabled="#{cc.attrs.disableControls}">
+      				<f:validateLength maximum="240" />
+      				<f:ajax event="blur" render="flickrError"/>
+					<f:validateBean disabled="false"/>
+				</h:inputText>
+				<h:message for="flickr" id="flickrError" styleClass="alert validation-error"/>
+			</div>
+		</div>
+		
+		<hr class="subfeaturette-divider" />
+		
+		<div class="form-group">
+			<h:outputLabel styleClass="col-sm-3 control-label" for="startDateCountry">
+				Date of arrival in this country:</h:outputLabel>
+			<div class="col-sm-3">
+				<h:inputText class="form-control" value="#{postController.startDateCountry}"
+            id="startDateCountry" p:placeholder="yyyy-mm-dd" required="true"
+						requiredMessage="Arrival date is required" disabled="#{cc.attrs.disableControls}">
+					<f:ajax event="blur" render="startDateError"/>
+					<f:validateBean disabled="false"/>
+				</h:inputText>
+				<h:message for="startDateCountry" id="startDateError" styleClass="alert validation-error"/>
+			</div>
+			
+			<h:outputLabel styleClass="col-sm-3 control-label" for="endDateCountry">
+				Date of departure from this country:</h:outputLabel>
+				<div class="col-sm-3">
+					<h:inputText class="form-control" value="#{postController.endDateCountry}"
+             id="endDateCountry" p:placeholder="yyyy-mm-dd" required="true"
+						requiredMessage="Departure date is required" disabled="#{cc.attrs.disableControls}">
+						<f:ajax event="blur" render="endDateError"/>
+					</h:inputText>
+					<h:message for="endDateCountry" id="endDateError" styleClass="alert validation-error"/>
+				</div>
+		</div>
+		
+		<hr class="subfeaturette-divider" />
+		
+		<div class="form-group">
+			<h:outputLabel styleClass="col-sm-3 control-label" for="country">Country of travel:</h:outputLabel>
+				<div class="col-sm-3">
+					<h:selectOneMenu value="#{postController.currentPost.contentList.get(0).country}" 
+					id="country" class="form-control" required="true" requiredMessage="Country is required"
+					disabled="#{cc.attrs.disableControls}">
+						<f:selectItem itemValue="" itemLabel="---"/>
+						<f:selectItems value="#{postController.availablecountries}" />
+       				<f:validateLength maximum="90" />
+       				<f:validateBean disabled="false"/>
+       				<f:ajax event="blur" render="countryError"/>
+					</h:selectOneMenu>
+					<h:message for="country" id="countryError" styleClass="alert validation-error"/>
 				</div>
 				
-				<h:outputLabel styleClass="col-sm-3 control-label" for="endDateCountry">
-					Date of departure from this country:</h:outputLabel>
-					<div class="col-sm-3">
-						<h:inputText class="form-control" value="#{postController.endDateCountry}"
-              id="endDateCountry" p:placeholder="yyyy-mm-dd" required="true"
-							requiredMessage="Departure date is required" disabled="#{cc.attrs.disableControls}">
-							<f:ajax event="blur" render="endDateError"/>
-						</h:inputText>
-						<h:message for="endDateCountry" id="endDateError" styleClass="alert validation-error"/>
-					</div>
-			</div>
-			
-			<hr class="subfeaturette-divider" />
-			
-			<div class="form-group">
-				<h:outputLabel styleClass="col-sm-3 control-label" for="country">Country of travel:</h:outputLabel>
-					<div class="col-sm-3">
-						<h:selectOneMenu value="#{postController.currentPost.contentList.get(0).country}" 
-						id="country" class="form-control" required="true" requiredMessage="Country is required"
-						disabled="#{cc.attrs.disableControls}">
-							<f:selectItem itemValue="" itemLabel="---"/>
-							<f:selectItems value="#{postController.availablecountries}" />
-	       				<f:validateLength maximum="90" />
-	       				<f:validateBean disabled="false"/>
-	       				<f:ajax event="blur" render="countryError"/>
-						</h:selectOneMenu>
-						<h:message for="country" id="countryError" styleClass="alert validation-error"/>
-					</div>
-					
-					
-				<h:outputLabel styleClass="col-sm-3 control-label" for="language">Language of post:</h:outputLabel>
-					<div class="col-sm-3">
-						<h:selectOneMenu value="#{postController.currentPost.contentList.get(0).language}" 
-						id="language" class="form-control" required="true"
-						requiredMessage="Language is required" disabled="#{cc.attrs.disableControls}">
-							<f:selectItem itemValue="" itemLabel="---"/>
-							<f:selectItems value="#{postController.availablelanguages}"/>
-	       				<f:validateLength maximum="90" />
-	       				<f:validateBean disabled="false"/>
-	       				<f:ajax event="blur" render="languageError"/>
-						</h:selectOneMenu>
-						<h:message for="language" id="languageError" styleClass="alert validation-error"/>
-					</div>
-			</div>
-	
-			<hr class="subfeaturette-divider" />
-							
-			<div class="form-group">
-				<h:outputLabel styleClass="col-sm-1 control-label" for="content">Content:</h:outputLabel>
-				<div class="col-sm-12">
-					<h:inputTextarea class="form-control" rows="12"
-            value="#{postController.currentPost.contentList.get(0).content}"
-            id="content" p:placeholder="Title of the post" required="true"
-						requiredMessage="Content is required" disabled="#{cc.attrs.disableControls}">
-						<f:ajax event="blur" render="contentError"/>
-					</h:inputTextarea>
-					<h:message for="content" id="contentError" styleClass="alert validation-error"/>
+				
+			<h:outputLabel styleClass="col-sm-3 control-label" for="language">Language of post:</h:outputLabel>
+				<div class="col-sm-3">
+					<h:selectOneMenu value="#{postController.currentPost.contentList.get(0).language}" 
+					id="language" class="form-control" required="true"
+					requiredMessage="Language is required" disabled="#{cc.attrs.disableControls}">
+						<f:selectItem itemValue="" itemLabel="---"/>
+						<f:selectItems value="#{postController.availablelanguages}"/>
+       				<f:validateLength maximum="90" />
+       				<f:validateBean disabled="false"/>
+       				<f:ajax event="blur" render="languageError"/>
+					</h:selectOneMenu>
+					<h:message for="language" id="languageError" styleClass="alert validation-error"/>
 				</div>
+		</div>
+
+		<hr class="subfeaturette-divider" />
+						
+		<div class="form-group">
+			<h:outputLabel styleClass="col-sm-1 control-label" for="content">Content:</h:outputLabel>
+			<div class="col-sm-12">
+				<h:inputTextarea class="form-control" rows="12"
+           value="#{postController.currentPost.contentList.get(0).content}"
+           id="content" p:placeholder="Title of the post" required="true"
+					requiredMessage="Content is required" disabled="#{cc.attrs.disableControls}">
+					<f:ajax event="blur" render="contentError"/>
+				</h:inputTextarea>
+				<h:message for="content" id="contentError" styleClass="alert validation-error"/>
 			</div>
-			
-			<div class="form-group">
-				<h:outputLabel styleClass="col-sm-9 control-label" for="postDate">Date of post:</h:outputLabel>
-					<div class="col-sm-3">
-						<h:inputText class="form-control" value="#{postController.postDate}"
-	             id="postDate" p:placeholder="yyyy-MM-dd HH:mm:ss" required="true"
-							requiredMessage="Date of post is required" disabled="#{cc.attrs.disableControls}">
-							<f:ajax event="blur" render="postDateError"/>
-						</h:inputText>
-						<h:message for="postDate" id="postDateError" styleClass="alert validation-error"/>
-					</div>
-			</div>
-		</comp:implementation>
+		</div>
 		
-	</h:body>
+		<div class="form-group">
+			<h:outputLabel styleClass="col-sm-9 control-label" for="postDate">Date of post:</h:outputLabel>
+				<div class="col-sm-3">
+					<h:inputText class="form-control" value="#{postController.postDate}"
+             id="postDate" p:placeholder="yyyy-MM-dd HH:mm:ss" required="true"
+						requiredMessage="Date of post is required" disabled="#{cc.attrs.disableControls}">
+						<f:ajax event="blur" render="postDateError"/>
+					</h:inputText>
+					<h:message for="postDate" id="postDateError" styleClass="alert validation-error"/>
+				</div>
+		</div>
+	</comp:implementation>
 				
 </html>
