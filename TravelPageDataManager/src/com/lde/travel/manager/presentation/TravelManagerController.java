@@ -193,7 +193,7 @@ public class TravelManagerController implements Serializable {
 //			}
 			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, 
 					"Some error appeared when writing the data.", null));
-			return "index.xhtml";
+			return "index.xhtml?redirect=true";
 		}
 		
 	}
@@ -250,7 +250,7 @@ public class TravelManagerController implements Serializable {
 		if(currentPost != null) {
 			postService.deletePost(currentPost);
 		}
-		return "index.xhtml";
+		return "index.xhtml?redirect=true";
 	}
 	
 	

@@ -20,6 +20,12 @@
 						value="#{postController.retrieveAllPosts()}" var="post">
 						<h:column>
 							<f:facet name="header">
+								<h:outputText value="Id"></h:outputText>
+							</f:facet>
+							<h:outputText value="#{post.id}"></h:outputText>
+						</h:column>
+						<h:column>
+							<f:facet name="header">
 								<h:outputText value="Author"></h:outputText>
 							</f:facet>
 							<h:outputText value="#{post.author}"></h:outputText>

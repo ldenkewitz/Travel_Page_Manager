@@ -1,33 +1,44 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
-      xmlns:post="http://xmlns.jcp.org/jsf/composite/components">  
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:post="http://xmlns.jcp.org/jsf/composite/components">
 
 	<ui:composition template="/template-mainframe.xhtml">
-			<ui:define name="content">
+		<ui:define name="head">
+			<f:metadata>
+				<f:viewParam name="id" value="#{postController.id}" />
+				<f:event listener="#{postController.findPostById()}"
+					type="preRenderView"></f:event>
+			</f:metadata>
+		</ui:define>
 	
-				<div class="main-content">
-				
-					<h2>Edit a post</h2>
-					<br/>
-					
-					<h:form id="createNewPost" styleClass="form-horizontal" p:role="form">
-					
-						<post:postComposite/>
-					
+		<ui:define name="content">
+	
+			<div class="main-content">
+	
+				<h2>Edit a post</h2>
+				<br />
+	
+				<h:form id="createNewPost" styleClass="form-horizontal" p:role="form">
+	
+					<post:postComposite />
+	
 					<p class="buttons_bar_create_post">
-						<h:commandButton styleClass="btn btn-md btn-primary" 
+						<h:commandButton styleClass="btn btn-md btn-primary"
 							action="#{postController.savePost()}" value="Save post" />
-						<h:link styleClass="btn btn-primary" outcome="index.xhtml" value="Back" />
+						<h:link styleClass="btn btn-primary" outcome="index.xhtml?faces-redirect=true"
+							value="Back" />
 					</p>
-					
-				</h:form> <!-- #editNewPost -->
 	
-			</div> <!-- .mainContent -->
+				</h:form>
+				<!-- #editNewPost -->
+	
+			</div>
+			<!-- .mainContent -->
 		</ui:define>
 	</ui:composition>
-	
+
 </html>

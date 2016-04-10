@@ -7,6 +7,13 @@
       xmlns:post="http://xmlns.jcp.org/jsf/composite/components">
 
 	<ui:composition template="/template-mainframe.xhtml">
+		<ui:define name="head">
+			<f:metadata>
+				<f:viewParam name="id" value="#{postController.id}" />
+				<f:event listener="#{postController.findPostById()}" type="preRenderView"></f:event>
+			</f:metadata>
+		</ui:define>
+		
 		<ui:define name="content">
 
 			<div class="main-content">
@@ -21,7 +28,7 @@
 					<p class="buttons_bar_create_post">
 						<h:commandButton styleClass="btn btn-md btn-primary" 
 							action="#{postController.deletePost()}" value="Delete post" immediate="true"/>
-						<h:link styleClass="btn btn-primary" outcome="index.xhtml" value="Back" />
+						<h:link styleClass="btn btn-primary" outcome="index.xhtml?faces-redirect=true" value="Back" />
 					</p>
 				
 				</h:form> <!-- #createNewPost -->

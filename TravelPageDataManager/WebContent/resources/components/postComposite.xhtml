@@ -48,11 +48,11 @@
              value="#{postController.currentPost.contentList.get(0).caption}"
              id="caption" p:placeholder="Title of the post" required="true"
              requiredMessage="Caption is required" disabled="#{cc.attrs.disableControls}"> 
-       				<f:validateLength minimum="1" maximum="120" />
-       				<f:ajax event="blur" render="captionError"/>
+     				<f:validateLength minimum="1" maximum="120" />
+     				<f:ajax event="blur" render="captionError"/>
 						<f:validateBean disabled="false"/>
 					</h:inputText>
-					<h:message for="caption aggregatCaptionHidden" id="captionError" styleClass="alert validation-error"/>
+					<h:message for="caption" id="captionError" styleClass="alert validation-error"/>
 					<h:message for="aggregatCaptionHidden" id="aggregatCaptionError" styleClass="alert validation-error"/>
 				</div>
 		</div>
